@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Books</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    const listBook = (id) => {
+      window.open('http://localhost:3000/book/listBook'+'?'+'id='+id);
+    };    
+  </script>
+</head>
+
+<body>
+  <h3>List libraries</h3>
+  <% for (const library of libraries) { %>
+    <p>Name: <%= library.name %>
+    </p>
+    <p>Manager: <%= library.manager %>
+    </p>
+    <button onclick="listBook('<%= library.id %>')">List Book</button>
+   <% } %>
+</body>
